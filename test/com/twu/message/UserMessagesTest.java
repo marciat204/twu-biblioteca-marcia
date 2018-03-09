@@ -11,4 +11,14 @@ public class UserMessagesTest {
         String welcomeMessage = UserMessages.getWelcomeMessage();
         assertEquals("Welcome to the Biblioteca :D", welcomeMessage);
     }
+
+    @Test
+    public void ShouldDisplayCheckoutSucessfulMessage() {
+        String expectedMessage = "Thank you! Enjoy the book";
+
+        UserMessages userMessages = new UserMessages();
+        String actualMessage =  userMessages.getCheckoutSuccessfulMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
