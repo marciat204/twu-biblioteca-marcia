@@ -47,4 +47,9 @@ public class Book {
         }
         return isEqual;
     }
+
+    @Override
+    public String toString() {
+        return this.getName()+ "\t\t" + this.getAuthor() + "\t\t" + this.getYear();
+    }
 }
