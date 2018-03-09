@@ -22,4 +22,8 @@ public class MenuOptions {
         }
         return optionReturn;
     }
+
+    public void checkoutBook(String bookName) {
+        bookManager.checkout(bookName);
+    }
 }

@@ -51,4 +51,16 @@ public class MenuOptionsTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldCheckoutaBook() {
+        String expectedAllAvailableBooksList = "Name\t\tAuthor\t\tYear\n\n"+
+                "Book1\t\tAuthor1\t\t2009\n"+
+                "Book2\t\tAuthor2\t\t2009";
+
+        menuOptions.checkoutBook("Book3");
+        String actualAllAvailableBooksList = menuOptions.chooseOption(Integer.toString(1));
+
+        assertEquals(expectedAllAvailableBooksList, actualAllAvailableBooksList);
+    }
 }

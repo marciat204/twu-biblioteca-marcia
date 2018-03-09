@@ -4,11 +4,13 @@ public class Book {
     private String name;
     private Integer year;
     private String author;
+    private boolean available;
 
     public Book(String name, Integer year, String author) {
         this.name = name;
         this.year = year;
         this.author = author;
+        this.available = true;
     }
 
     public String getName() {
@@ -51,5 +53,13 @@ public class Book {
     @Override
     public String toString() {
         return this.getName()+ "\t\t" + this.getAuthor() + "\t\t" + this.getYear();
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
