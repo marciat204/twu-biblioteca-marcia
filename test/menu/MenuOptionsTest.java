@@ -29,8 +29,26 @@ public class MenuOptionsTest {
                 "Book2\t\tAuthor2\t\t2009\n"+
                 "Book3\t\tAuthor3\t\t2019";
 
-        String actualBookList = menuOptions.chooseOption(1);
+        String actualBookList = menuOptions.chooseOption(Integer.toString(1));
 
         assertEquals(expectedBookList, actualBookList);
+    }
+
+    @Test
+    public void ShouldShowInvalidOptionMessageAtMainMenu(){
+        String expectedMessage = "Invalid Option";
+
+        String actualMessage = menuOptions.chooseOption(Integer.toString(-5));
+
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void ShouldQuitMainMenu(){
+        String expectedMessage = "Quit";
+
+        String actualMessage = menuOptions.chooseOption("Quit");
+
+        assertEquals(expectedMessage, actualMessage);
     }
 }

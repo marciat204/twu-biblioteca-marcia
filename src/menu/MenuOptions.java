@@ -13,7 +13,13 @@ public class MenuOptions {
         return "1. List Books";
     }
 
-    public String chooseOption(int option) {
-        return bookManager.getAllBooksDetailsList();
+    public String chooseOption(String option) {
+        String optionReturn = "Invalid Option";
+        if (option.equals(Integer.toString(1))) {
+            optionReturn = bookManager.getAllBooksDetailsList();
+        }else if (option.equals("Quit")){
+            optionReturn = "Quit";
+        }
+        return optionReturn;
     }
 }

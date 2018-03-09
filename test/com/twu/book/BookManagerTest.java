@@ -43,6 +43,5 @@ public class BookManagerTest {
         String actualBookListDetails = bookManager.getAllBooksDetailsList();
 
         assertEquals(expectedBookListDetails, actualBookListDetails);
-
     }
 }
