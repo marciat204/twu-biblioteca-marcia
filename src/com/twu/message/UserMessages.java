@@ -9,4 +9,8 @@ public class UserMessages {
     public String getCheckoutSuccessfulMessage() {
         return "Thank you! Enjoy the book";
     }
+
+    public String getCheckoutUnsuccessfulMessage() {
+        return "That book is not available";
+    }
 }

@@ -13,11 +13,21 @@ public class UserMessagesTest {
     }
 
     @Test
-    public void ShouldDisplayCheckoutSucessfulMessage() {
+    public void ShouldDisplayCheckoutSuccessfulMessage() {
         String expectedMessage = "Thank you! Enjoy the book";
 
         UserMessages userMessages = new UserMessages();
         String actualMessage =  userMessages.getCheckoutSuccessfulMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void ShouldDisplayCheckoutUnsuccessfulMessage() {
+        String expectedMessage = "That book is not available";
+
+        UserMessages userMessages = new UserMessages();
+        String actualMessage =  userMessages.getCheckoutUnsuccessfulMessage();
 
         assertEquals(expectedMessage, actualMessage);
     }
