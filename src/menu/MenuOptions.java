@@ -28,6 +28,11 @@ public class MenuOptions {
 
     public String checkoutBook(String bookName) {
         boolean hasSuccess = bookManager.checkout(bookName);
+        String message = getCheckoutMessage(hasSuccess);
+        return message;
+    }
+
+    private String getCheckoutMessage(boolean hasSuccess) {
         String message = "";
         if (hasSuccess){
             message = userMessages.getCheckoutSuccessfulMessage();

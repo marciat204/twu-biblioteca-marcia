@@ -47,22 +47,31 @@ public class BookManager {
     }
 
     public boolean checkout(String bookName) {
+        int bookIndex = findBookIndex(bookName);
+        boolean success = checkoutStatus(bookIndex);
+        return success;
+    }
+
+    private boolean checkoutStatus(int bookIndex) {
         boolean success = false;
-        int bookIndex = -1;
-        int counter = 0;
-        Book checkedBook = null;
-        for (Book book: allBooks) {
-            if (book.getName().equals(bookName) && book.isAvailable()){
-                bookIndex = counter;
-                checkedBook = book;
-            }
-            counter++;
-        }
-        if (checkedBook != null && bookIndex >= 0) {
+        if (bookIndex >= 0) {
+            Book checkedBook = allBooks.get(bookIndex);
             checkedBook.setAvailable(false);
             allBooks.set(bookIndex, checkedBook);
             success = true;
         }
         return success;
+    }
+
+    private int findBookIndex(String bookName) {
+        int bookIndex = -1;
+        int counter = 0;
+        for (Book book: allBooks) {
+            if (book.getName().equals(bookName) && book.isAvailable()){
+                bookIndex = counter;
+            }
+            counter++;
+        }
+        return bookIndex;
     }
 }
