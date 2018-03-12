@@ -21,10 +21,19 @@ public class MenuOptions {
 
     public String chooseOption(String option) {
         String optionReturn = "Invalid Option";
-        if (option.equals(Integer.toString(1))) {
-            optionReturn = bookManager.getAllBooksDetailsList();
-        }else if (option.equalsIgnoreCase("Quit")){
-            optionReturn = "Quit";
+        switch (option.toLowerCase()){
+            case "1":
+                optionReturn = bookManager.getAllBooksDetailsList();
+                break;
+            case "2":
+                optionReturn = "Insert the book name";
+                break;
+            case "3":
+                optionReturn = "Insert the book name";
+                break;
+            case "quit":
+                optionReturn = "Quit";
+                break;
         }
         return optionReturn;
     }
