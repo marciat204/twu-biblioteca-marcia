@@ -31,4 +31,14 @@ public class UserMessagesTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldDisplayReturnSuccessfulMessage() {
+        String expectedMessage = "Thank you for returning the book";
+
+        UserMessages userMessages = new UserMessages();
+        String actualMessage =  userMessages.getReturnSuccessfulMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
