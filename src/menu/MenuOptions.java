@@ -52,6 +52,8 @@ public class MenuOptions {
         String message = "";
         if (hasSuccess){
             message = userMessages.getReturnSuccessfulMessage();
+        }else {
+            message = userMessages.getReturnUnsuccessfulMessage();
         }
         return message;
     }

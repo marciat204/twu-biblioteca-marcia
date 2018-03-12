@@ -104,4 +104,13 @@ public class MenuOptionsTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldDisplayUnsuccessfulReturnMessage(){
+        String expectedMessage = "That is not a valid book to return.";
+
+        String actualMessage = menuOptions.returnBook("Book45");
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }

@@ -17,4 +17,8 @@ public class UserMessages {
     public String getReturnSuccessfulMessage() {
         return "Thank you for returning the book";
     }
+
+    public String getReturnUnsuccessfulMessage() {
+        return "That is not a valid book to return.";
+    }
 }

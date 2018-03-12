@@ -41,4 +41,14 @@ public class UserMessagesTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldDisplayReturnUnsuccessfulMessage() {
+        String expectedMessage = "That is not a valid book to return.";
+
+        UserMessages userMessages = new UserMessages();
+        String actualMessage =  userMessages.getReturnUnsuccessfulMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
