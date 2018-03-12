@@ -42,7 +42,17 @@ public class MenuOptions {
         return message;
     }
 
-    public void returnBook(String bookName) {
-        bookManager.returnBook(bookName);
+    public String returnBook(String bookName) {
+        boolean hasSuccess = bookManager.returnBook(bookName);
+        String message = getReturnMessage(hasSuccess);
+        return message;
+    }
+
+    private String getReturnMessage(boolean hasSuccess) {
+        String message = "";
+        if (hasSuccess){
+            message = userMessages.getReturnSuccessfulMessage();
+        }
+        return message;
     }
 }

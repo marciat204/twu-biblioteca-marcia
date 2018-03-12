@@ -95,4 +95,13 @@ public class MenuOptionsTest {
 
         assertEquals(expectedAllAvailableBooksList, actualAllAvailableBooksList);
     }
+
+    @Test
+    public void ShouldDisplaySuccessReturnMessage(){
+        String expectedMessage = "Thank you for returning the book";
+
+        String actualMessage = menuOptions.returnBook("Book4");
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
