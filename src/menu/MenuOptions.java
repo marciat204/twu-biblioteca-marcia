@@ -36,6 +36,8 @@ public class MenuOptions {
         String message = "";
         if (hasSuccess){
             message = userMessages.getCheckoutSuccessfulMessage();
+        }else {
+            message = userMessages.getCheckoutUnsuccessfulMessage();
         }
         return message;
     }

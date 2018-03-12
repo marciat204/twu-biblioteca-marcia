@@ -72,4 +72,13 @@ public class MenuOptionsTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldDisplayUnsuccessfulCheckoutMessage(){
+        String expectedMessage = "That book is not available";
+
+        String actualMessage = menuOptions.checkoutBook("Book4");
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
