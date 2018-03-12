@@ -53,7 +53,7 @@ public class MenuOptionsTest {
     }
 
     @Test
-    public void ShouldCheckoutaBook() {
+    public void ShouldCheckoutBook() {
         String expectedAllAvailableBooksList = "Name\t\tAuthor\t\tYear\n\n"+
                 "Book1\t\tAuthor1\t\t2009\n"+
                 "Book2\t\tAuthor2\t\t2009";
@@ -62,5 +62,14 @@ public class MenuOptionsTest {
         String actualAllAvailableBooksList = menuOptions.chooseOption(Integer.toString(1));
 
         assertEquals(expectedAllAvailableBooksList, actualAllAvailableBooksList);
+    }
+
+    @Test
+    public void ShouldDisplaySuccessCheckoutMessage(){
+        String expectedMessage = "Thank you! Enjoy the book";
+
+        String actualMessage = menuOptions.checkoutBook("Book3");
+
+        assertEquals(expectedMessage, actualMessage);
     }
 }

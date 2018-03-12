@@ -1,12 +1,15 @@
 package menu;
 
 import com.twu.book.BookManager;
+import com.twu.message.UserMessages;
 
 public class MenuOptions {
     private BookManager bookManager;
+    private UserMessages userMessages;
 
     public MenuOptions() {
         bookManager = new BookManager();
+        userMessages = new UserMessages();
     }
 
     public String getMainMenuList() {
@@ -23,7 +26,12 @@ public class MenuOptions {
         return optionReturn;
     }
 
-    public void checkoutBook(String bookName) {
-        bookManager.checkout(bookName);
+    public String checkoutBook(String bookName) {
+        boolean hasSuccess = bookManager.checkout(bookName);
+        String message = "";
+        if (hasSuccess){
+            message = userMessages.getCheckoutSuccessfulMessage();
+        }
+        return message;
     }
 }

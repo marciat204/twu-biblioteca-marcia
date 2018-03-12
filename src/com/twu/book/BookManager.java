@@ -46,7 +46,8 @@ public class BookManager {
         return availableBooks;
     }
 
-    public void checkout(String bookName) {
+    public boolean checkout(String bookName) {
+        boolean success = false;
         int bookIndex = -1;
         int counter = 0;
         Book checkedBook = null;
@@ -60,7 +61,8 @@ public class BookManager {
         if (checkedBook != null && bookIndex >= 0) {
             checkedBook.setAvailable(false);
             allBooks.set(bookIndex, checkedBook);
+            success = true;
         }
-
+        return success;
     }
 }
