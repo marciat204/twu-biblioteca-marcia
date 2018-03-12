@@ -24,10 +24,13 @@ public class BookManager {
         Book book1 = new Book("Book1", 2009, "Author1");
         Book book2 = new Book("Book2", 2009, "Author2");
         Book book3 = new Book("Book3", 2019, "Author3");
+        Book book4 = new Book("Book4", 2029, "Author3");
+        book4.setAvailable(false);
 
         allBooksMock.add(book1);
         allBooksMock.add(book2);
         allBooksMock.add(book3);
+        allBooksMock.add(book4);
         return allBooksMock;
     }
 
@@ -56,9 +59,11 @@ public class BookManager {
         boolean success = false;
         if (bookIndex >= 0) {
             Book checkedBook = allBooks.get(bookIndex);
-            checkedBook.setAvailable(false);
-            allBooks.set(bookIndex, checkedBook);
-            success = true;
+            if (checkedBook.isAvailable()){
+                checkedBook.setAvailable(false);
+                allBooks.set(bookIndex, checkedBook);
+                success = true;
+            }
         }
         return success;
     }
@@ -67,11 +72,28 @@ public class BookManager {
         int bookIndex = -1;
         int counter = 0;
         for (Book book: allBooks) {
-            if (book.getName().equals(bookName) && book.isAvailable()){
+            if (book.getName().equals(bookName)){
                 bookIndex = counter;
             }
             counter++;
         }
         return bookIndex;
+    }
+
+    public boolean returnBook(String bookName) {
+        int bookIndex = findBookIndex(bookName);
+        boolean successStatus = returnStatus(bookIndex);
+        return successStatus;
+    }
+
+    private boolean returnStatus(int bookIndex) {
+        boolean success = false;
+        if (bookIndex >= 0) {
+            Book returnedBook = allBooks.get(bookIndex);
+            returnedBook.setAvailable(true);
+            allBooks.set(bookIndex, returnedBook);
+            success = true;
+        }
+        return success;
     }
 }

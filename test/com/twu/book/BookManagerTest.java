@@ -19,9 +19,12 @@ public class BookManagerTest {
         Book book1 = new Book("Book1", 2009, "Author1");
         Book book2 = new Book("Book2", 2009, "Author2");
         Book book3 = new Book("Book3", 2019, "Author3");
+        Book book4 = new Book("Book4", 2029, "Author3");
+
         allLibraryBooks.add(book1);
         allLibraryBooks.add(book2);
         allLibraryBooks.add(book3);
+        allLibraryBooks.add(book4);
 
         bookManager = new BookManager();
     }

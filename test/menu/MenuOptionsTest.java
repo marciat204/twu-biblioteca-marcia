@@ -81,4 +81,18 @@ public class MenuOptionsTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void ShouldReturnBook() {
+        String expectedAllAvailableBooksList = "Name\t\tAuthor\t\tYear\n\n"+
+                "Book1\t\tAuthor1\t\t2009\n"+
+                "Book2\t\tAuthor2\t\t2009\n"+
+                "Book3\t\tAuthor3\t\t2019\n"+
+                "Book4\t\tAuthor3\t\t2029";
+
+        menuOptions.returnBook("Book4");
+        String actualAllAvailableBooksList = menuOptions.chooseOption(Integer.toString(1));
+
+        assertEquals(expectedAllAvailableBooksList, actualAllAvailableBooksList);
+    }
 }

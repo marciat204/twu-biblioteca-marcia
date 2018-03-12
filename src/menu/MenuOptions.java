@@ -41,4 +41,8 @@ public class MenuOptions {
         }
         return message;
     }
+
+    public void returnBook(String bookName) {
+        bookManager.returnBook(bookName);
+    }
 }
