@@ -13,14 +13,17 @@ public class MenuOptions {
     }
 
     public String getMainMenuList() {
-        return "1. List Books";
+        String menuOptions = "1. List Books\n" +
+                "2. Checkout Book\n"+
+                "3. Return Book\n";
+        return menuOptions;
     }
 
     public String chooseOption(String option) {
         String optionReturn = "Invalid Option";
         if (option.equals(Integer.toString(1))) {
             optionReturn = bookManager.getAllBooksDetailsList();
-        }else if (option.equals("Quit")){
+        }else if (option.equalsIgnoreCase("Quit")){
             optionReturn = "Quit";
         }
         return optionReturn;
