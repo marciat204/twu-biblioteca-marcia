@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class MovieManagerTest {
 
@@ -25,5 +26,12 @@ public class MovieManagerTest {
         String actualMovieListDetails = movieManager.getAvailableItemsDetailsList();
 
         assertEquals(expectedMovieListDetails, actualMovieListDetails);
+    }
+
+    @Test
+    public void ShouldCheckoutSuccessful(){
+        boolean actualCheckoutStatus = movieManager.checkout("Hannah Montana The Movie");
+
+        assertTrue(actualCheckoutStatus);
     }
 }
