@@ -1,28 +1,18 @@
-package com.twu.movie;
+package com.twu.products.movie;
 
-public class Movie {
+import com.twu.products.Item;
 
-    private boolean available;
-    private String name;
+public class Movie  extends Item {
+
     private String director;
-    private int year;
     private double rating;
 
     public Movie(String name, String director, int year, double rating) {
-        this.available = true;
-        this.name = name;
+        super(name, year);
         this.director = director;
-        this.year = year;
         this.rating = rating;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getDirector() {
         return director;
@@ -32,28 +22,12 @@ public class Movie {
         this.director = director;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     public double getRating() {
         return rating;
     }
 
     public void setRating(double rating) {
         this.rating = rating;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
     }
 
     @Override

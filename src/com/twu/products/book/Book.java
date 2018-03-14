@@ -1,32 +1,13 @@
-package com.twu.book;
+package com.twu.products.book;
 
-public class Book {
-    private String name;
-    private Integer year;
+import com.twu.products.Item;
+
+public class Book extends Item {
     private String author;
-    private boolean available;
 
     public Book(String name, Integer year, String author) {
-        this.name = name;
-        this.year = year;
+        super(name, year);
         this.author = author;
-        this.available = true;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
     }
 
     public String getAuthor() {
@@ -55,11 +36,4 @@ public class Book {
         return this.getName()+ "\t\t" + this.getAuthor() + "\t\t" + this.getYear();
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
 }

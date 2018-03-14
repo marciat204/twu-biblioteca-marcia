@@ -1,4 +1,4 @@
-package com.twu.movie;
+package com.twu.products.movie;
 
 import org.junit.Before;
 import org.junit.Test;

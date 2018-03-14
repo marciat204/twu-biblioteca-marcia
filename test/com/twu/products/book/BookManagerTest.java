@@ -1,4 +1,4 @@
-package com.twu.book;
+package com.twu.products.book;
 
 import org.junit.Before;
 import org.junit.Test;

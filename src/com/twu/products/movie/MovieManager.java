@@ -1,4 +1,4 @@
-package com.twu.movie;
+package com.twu.products.movie;
 
 import java.util.ArrayList;
 import java.util.List;

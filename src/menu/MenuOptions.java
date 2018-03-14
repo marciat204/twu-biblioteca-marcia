@@ -1,6 +1,6 @@
 package menu;
 
-import com.twu.book.BookManager;
+import com.twu.products.book.BookManager;
 import com.twu.message.UserMessages;
 
 public class MenuOptions {

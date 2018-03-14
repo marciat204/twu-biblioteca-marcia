@@ -1,4 +1,4 @@
-package com.twu.book;
+package com.twu.products.book;
 
 import java.util.ArrayList;
 import java.util.List;
