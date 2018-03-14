@@ -1,20 +1,20 @@
 package com.twu.products.movie;
 
+import com.twu.products.Item;
+import com.twu.products.ItemManager;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
-public class MovieManager {
-
-    private List<Movie> allMovies;
+public class MovieManager extends ItemManager {
 
     public MovieManager(){
-        allMovies = generateMoviesMock();
+        super();
+        allItens = generateMoviesMock();
     }
 
-    private List<Movie> generateMoviesMock() {
-        List<Movie> mockMovies = new ArrayList<>();
+    private List<Item> generateMoviesMock() {
+        List<Item> mockMovies = new ArrayList<>();
         Movie movie1 = new Movie("Hannah Montana The Movie", "Director 1", 2009, 9.5);
         Movie movie2 = new Movie("Beauty and the Beast", "Director 78", 2017, 7.5);
         Movie movie3 = new Movie("Blue Lagoon", "Director b", 1970, 5.5);
@@ -25,15 +25,8 @@ public class MovieManager {
         return mockMovies;
     }
 
-    public String getAvailableMoviesDetailsList() {
-        List<Movie> availableMovies = allMovies.stream().filter(movie -> movie.isAvailable()).collect(Collectors.toList());
-        StringJoiner stringJoiner = new StringJoiner("\n");
-        stringJoiner.add(String.format("%-30s %-20s %-8s %-4s\n", "Name", "Director", "Year", "Rating"));
-
-        for (Movie movie: availableMovies) {
-            stringJoiner.add(movie.toString());
-        }
-        return stringJoiner.toString();
+    @Override
+    public String getHeader() {
+        return String.format("%-30s %-20s %-8s %-4s\n", "Name", "Director", "Year", "Rating");
     }
-
 }
