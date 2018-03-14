@@ -22,7 +22,7 @@ public class MovieManagerTest {
                 String.format("%-30s %-20s %-8s %-2.2f\n", "Beauty and the Beast", "Director 78", "2017", 7.5) +
                 String.format("%-30s %-20s %-8s %-2.2f", "Blue Lagoon", "Director b", "1970", 5.5);
 
-        String actualMovieListDetails = movieManager.getAvailableMoviesDetailsList();
+        String actualMovieListDetails = movieManager.getAvailableItemsDetailsList();
 
         assertEquals(expectedMovieListDetails, actualMovieListDetails);
     }

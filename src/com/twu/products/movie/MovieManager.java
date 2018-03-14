@@ -10,7 +10,7 @@ public class MovieManager extends ItemManager {
 
     public MovieManager(){
         super();
-        allItens = generateMoviesMock();
+        allItems = generateMoviesMock();
     }
 
     private List<Item> generateMoviesMock() {

@@ -23,7 +23,7 @@ public class MenuOptions {
         String optionReturn = "Invalid Option";
         switch (option.toLowerCase()){
             case "1":
-                optionReturn = bookManager.getAllBooksDetailsList();
+                optionReturn = bookManager.getAvailableItemsDetailsList();
                 break;
             case "2":
                 optionReturn = "Insert the book name";

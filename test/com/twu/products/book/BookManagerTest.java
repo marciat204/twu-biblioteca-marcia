@@ -1,5 +1,6 @@
 package com.twu.products.book;
 
+import com.twu.products.Item;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ public class BookManagerTest {
 
     @Test
     public void ShouldGetAllBooks() {
-        List<Book> actualLibraryBooks = bookManager.getAll();
+        List<Item> actualLibraryBooks = bookManager.getAll();
 
         assertEquals(allLibraryBooks, actualLibraryBooks);
     }
@@ -43,7 +44,7 @@ public class BookManagerTest {
                 "Book2\t\tAuthor2\t\t2009\n"+
                 "Book3\t\tAuthor3\t\t2019";
 
-        String actualBookListDetails = bookManager.getAllBooksDetailsList();
+        String actualBookListDetails = bookManager.getAvailableItemsDetailsList();
 
         assertEquals(expectedBookListDetails, actualBookListDetails);
     }
