@@ -2,20 +2,25 @@ package menu;
 
 import com.twu.products.book.BookManager;
 import com.twu.message.UserMessages;
+import com.twu.products.movie.MovieManager;
 
 public class MenuOptions {
     private BookManager bookManager;
     private UserMessages userMessages;
+    private MovieManager movieManager;
 
     public MenuOptions() {
         bookManager = new BookManager();
         userMessages = new UserMessages();
+        movieManager = new MovieManager();
     }
 
     public String getMainMenuList() {
         String menuOptions = "1. List Books\n" +
                 "2. Checkout Book\n"+
-                "3. Return Book\n";
+                "3. Return Book\n"+
+                "4. Checkout Movie\n"+
+                "5. Return Movie\n";
         return menuOptions;
     }
 
@@ -40,16 +45,16 @@ public class MenuOptions {
 
     public String checkoutBook(String bookName) {
         boolean hasSuccess = bookManager.checkout(bookName);
-        String message = getCheckoutMessage(hasSuccess);
+        String message = getCheckoutMessage(hasSuccess, "book");
         return message;
     }
 
-    private String getCheckoutMessage(boolean hasSuccess) {
+    private String getCheckoutMessage(boolean hasSuccess, String item) {
         String message = "";
         if (hasSuccess){
-            message = userMessages.getCheckoutSuccessfulMessage();
+            message = userMessages.getCheckoutSuccessfulMessage(item);
         }else {
-            message = userMessages.getCheckoutUnsuccessfulMessage();
+            message = userMessages.getCheckoutUnsuccessfulMessage(item);
         }
         return message;
     }
@@ -63,10 +68,15 @@ public class MenuOptions {
     private String getReturnMessage(boolean hasSuccess) {
         String message = "";
         if (hasSuccess){
-            message = userMessages.getReturnSuccessfulMessage();
+            message = userMessages.getReturnSuccessfulMessage("book");
         }else {
-            message = userMessages.getReturnUnsuccessfulMessage();
+            message = userMessages.getReturnUnsuccessfulMessage("book");
         }
         return message;
+    }
+
+    public String checkoutMovie(String movieName) {
+        boolean hasSuccess = movieManager.checkout(movieName);
+        return getCheckoutMessage(hasSuccess, "movie");
     }
 }

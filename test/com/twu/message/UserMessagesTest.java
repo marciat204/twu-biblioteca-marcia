@@ -17,7 +17,7 @@ public class UserMessagesTest {
         String expectedMessage = "Thank you! Enjoy the book";
 
         UserMessages userMessages = new UserMessages();
-        String actualMessage =  userMessages.getCheckoutSuccessfulMessage();
+        String actualMessage =  userMessages.getCheckoutSuccessfulMessage("book");
 
         assertEquals(expectedMessage, actualMessage);
     }
@@ -27,7 +27,7 @@ public class UserMessagesTest {
         String expectedMessage = "That book is not available";
 
         UserMessages userMessages = new UserMessages();
-        String actualMessage =  userMessages.getCheckoutUnsuccessfulMessage();
+        String actualMessage =  userMessages.getCheckoutUnsuccessfulMessage("book");
 
         assertEquals(expectedMessage, actualMessage);
     }
@@ -37,7 +37,7 @@ public class UserMessagesTest {
         String expectedMessage = "Thank you for returning the book";
 
         UserMessages userMessages = new UserMessages();
-        String actualMessage =  userMessages.getReturnSuccessfulMessage();
+        String actualMessage =  userMessages.getReturnSuccessfulMessage("book");
 
         assertEquals(expectedMessage, actualMessage);
     }
@@ -47,8 +47,9 @@ public class UserMessagesTest {
         String expectedMessage = "That is not a valid book to return.";
 
         UserMessages userMessages = new UserMessages();
-        String actualMessage =  userMessages.getReturnUnsuccessfulMessage();
+        String actualMessage =  userMessages.getReturnUnsuccessfulMessage("book");
 
         assertEquals(expectedMessage, actualMessage);
     }
+
 }

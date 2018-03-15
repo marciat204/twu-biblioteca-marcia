@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class MovieManagerTest {
@@ -33,5 +34,12 @@ public class MovieManagerTest {
         boolean actualCheckoutStatus = movieManager.checkout("Hannah Montana The Movie");
 
         assertTrue(actualCheckoutStatus);
+    }
+
+    @Test
+    public void ShouldNotCheckoutInvalidName(){
+        boolean actualCheckoutStatus = movieManager.checkout("A fuga das galinhas");
+
+        assertFalse(actualCheckoutStatus);
     }
 }

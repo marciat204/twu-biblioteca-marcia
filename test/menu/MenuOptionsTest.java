@@ -18,7 +18,9 @@ public class MenuOptionsTest {
     public void ShouldShowMainMenuOptions(){
         String expectedMainMenuOptions = "1. List Books\n" +
                 "2. Checkout Book\n"+
-                "3. Return Book\n";
+                "3. Return Book\n"+
+                "4. Checkout Movie\n"+
+                "5. Return Movie\n";
         String actualMainMenuOptions = menuOptions.getMainMenuList();
 
         assertEquals(expectedMainMenuOptions, actualMainMenuOptions);
@@ -112,6 +114,24 @@ public class MenuOptionsTest {
         String expectedMessage = "That is not a valid book to return.";
 
         String actualMessage = menuOptions.returnBook("Book45");
+
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void ShouldDisplaySuccessCheckoutMovieMessage(){
+        String expectedMessage = "Thank you! Enjoy the movie";
+
+        String actualMessage = menuOptions.checkoutMovie("Hannah Montana The Movie");
+
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void ShouldDisplayUnsuccessfulCheckoutMovieMessage(){
+        String expectedMessage = "That movie is not available";
+
+        String actualMessage = menuOptions.checkoutMovie("A beira da morte");
 
         assertEquals(expectedMessage, actualMessage);
     }

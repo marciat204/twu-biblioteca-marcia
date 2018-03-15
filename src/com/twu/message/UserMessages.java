@@ -6,19 +6,19 @@ public class UserMessages {
         return "Welcome to the Biblioteca :D";
     }
 
-    public String getCheckoutSuccessfulMessage() {
-        return "Thank you! Enjoy the book";
+    public String getCheckoutSuccessfulMessage(String item) {
+        return "Thank you! Enjoy the "+ item;
     }
 
-    public String getCheckoutUnsuccessfulMessage() {
-        return "That book is not available";
+    public String getCheckoutUnsuccessfulMessage(String item) {
+        return "That " + item + " is not available";
     }
 
-    public String getReturnSuccessfulMessage() {
-        return "Thank you for returning the book";
+    public String getReturnSuccessfulMessage(String item) {
+        return "Thank you for returning the " + item;
     }
 
-    public String getReturnUnsuccessfulMessage() {
-        return "That is not a valid book to return.";
+    public String getReturnUnsuccessfulMessage(String item) {
+        return "That is not a valid " + item + " to return.";
     }
 }
