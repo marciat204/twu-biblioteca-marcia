@@ -20,15 +20,23 @@ public class BibliotecaApp {
 
             System.out.println(menuOptions.chooseOption(input)+"\n");
 
-            String bookName = null;
+            String itemName = null;
             switch (input.toLowerCase()){
                 case "2":
-                    bookName = scanner.nextLine();
-                    System.out.println(menuOptions.checkoutBook(bookName));
+                    itemName = scanner.nextLine();
+                    System.out.println(menuOptions.checkoutBook(itemName));
                     break;
                 case "3":
-                    bookName = scanner.nextLine();
-                    System.out.println(menuOptions.returnBook(bookName));
+                    itemName = scanner.nextLine();
+                    System.out.println(menuOptions.returnBook(itemName));
+                    break;
+                case "5":
+                    itemName = scanner.nextLine();
+                    System.out.println(menuOptions.checkoutMovie(itemName));
+                    break;
+                case "6":
+                    itemName = scanner.nextLine();
+                    System.out.println(menuOptions.checkoutMovie(itemName));
                     break;
                 case "quit":
                     quit = true;

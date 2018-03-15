@@ -19,8 +19,9 @@ public class MenuOptions {
         String menuOptions = "1. List Books\n" +
                 "2. Checkout Book\n"+
                 "3. Return Book\n"+
-                "4. Checkout Movie\n"+
-                "5. Return Movie\n";
+                "4. List Movies\n"+
+                "5. Checkout Movie\n"+
+                "6. Return Movie\n";
         return menuOptions;
     }
 
@@ -34,6 +35,15 @@ public class MenuOptions {
                 optionReturn = "Insert the book name";
                 break;
             case "3":
+                optionReturn = "Insert the book name";
+                break;
+            case "4":
+                optionReturn = movieManager.getAvailableItemsDetailsList();
+                break;
+            case "5":
+                optionReturn = "Insert the book name";
+                break;
+            case "6":
                 optionReturn = "Insert the book name";
                 break;
             case "quit":

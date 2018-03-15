@@ -19,8 +19,9 @@ public class MenuOptionsTest {
         String expectedMainMenuOptions = "1. List Books\n" +
                 "2. Checkout Book\n"+
                 "3. Return Book\n"+
-                "4. Checkout Movie\n"+
-                "5. Return Movie\n";
+                "4. List Movies\n"+
+                "5. Checkout Movie\n"+
+                "6. Return Movie\n";
         String actualMainMenuOptions = menuOptions.getMainMenuList();
 
         assertEquals(expectedMainMenuOptions, actualMainMenuOptions);
